@@ -12067,6 +12067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OscillatePlatform2D
   distance: 70
   speed: 0.3
+  rb: {fileID: 0}
+  startPos: {x: 0, y: 0}
 --- !u!1 &319956992
 GameObject:
   m_ObjectHideFlags: 0
@@ -16111,7 +16113,7 @@ Transform:
   m_GameObject: {fileID: 2121621393}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -180, y: -20, z: -10}
+  m_LocalPosition: {x: 10, y: -57, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
