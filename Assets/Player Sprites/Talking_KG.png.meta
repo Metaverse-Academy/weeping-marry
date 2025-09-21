@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 23ab27d43f4b20a468a9e95d813295fd
+guid: 70c3059e3f93c97488e388c191f55a81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3624141828879840293
-    second: Idle_KG_2_0
+      213: 5345449779641292910
+    second: Talking_KG_0
   - first:
-      213: 2061022368705192916
-    second: Idle_KG_2_1
+      213: -2816779881144148339
+    second: Talking_KG_1
   - first:
-      213: 25434505459828151
-    second: Idle_KG_2_2
+      213: -8165062872190021169
+    second: Talking_KG_2
   - first:
-      213: 6166110345489382641
-    second: Idle_KG_2_3
+      213: 4045825983011228438
+    second: Talking_KG_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_KG_2_0
+      name: Talking_KG_0
       rect:
         serializedVersion: 2
-        x: 20
+        x: 0
         y: 0
-        width: 51
-        height: 62
+        width: 100
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdb8bf9453674bdc0800000000000000
-      internalID: -3624141828879840293
+      spriteID: e689530d04ade2a40800000000000000
+      internalID: 5345449779641292910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_KG_2_1
+      name: Talking_KG_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 100
         y: 0
-        width: 51
-        height: 63
+        width: 100
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d3aec0bce83a9c10800000000000000
-      internalID: 2061022368705192916
+      spriteID: d8e9fed3f99c8e8d0800000000000000
+      internalID: -2816779881144148339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_KG_2_2
+      name: Talking_KG_2
       rect:
         serializedVersion: 2
-        x: 220
+        x: 200
         y: 0
-        width: 51
-        height: 62
+        width: 100
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b588f64c8c5a5000800000000000000
-      internalID: 25434505459828151
+      spriteID: fc1126ef39edfae80800000000000000
+      internalID: -8165062872190021169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_KG_2_3
+      name: Talking_KG_3
       rect:
         serializedVersion: 2
-        x: 320
+        x: 300
         y: 0
-        width: 52
-        height: 61
+        width: 100
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fc71c490bc629550800000000000000
-      internalID: 6166110345489382641
+      spriteID: 61b0e6cbb49a52830800000000000000
+      internalID: 4045825983011228438
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0aecf1ef3347975438e0ca455d05e258
     internalID: 0
     vertices: []
     indices: 
@@ -221,12 +221,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Idle_KG_2_0: -3624141828879840293
-      Idle_KG_2_1: 2061022368705192916
-      Idle_KG_2_2: 25434505459828151
-      Idle_KG_2_3: 6166110345489382641
+      Talking_KG_0: 5345449779641292910
+      Talking_KG_1: -2816779881144148339
+      Talking_KG_2: -8165062872190021169
+      Talking_KG_3: 4045825983011228438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
