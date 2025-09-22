@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: d99952a0e22d997439cdc359e2bab239
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3054223605585987476
+    second: $0mr_mollusk_0
+  - first:
+      213: 1519946838145539377
+    second: $0mr_mollusk_1
+  - first:
+      213: -1715663433303480932
+    second: $0mr_mollusk_2
+  - first:
+      213: -3161959644299934601
+    second: $0mr_mollusk_3
+  - first:
+      213: 4078925699787973342
+    second: $0mr_mollusk_4
+  - first:
+      213: -7092790302288802681
+    second: $0mr_mollusk_5
+  - first:
+      213: 3886036820140457438
+    second: $0mr_mollusk_6
+  - first:
+      213: 5864877589672165739
+    second: $0mr_mollusk_7
+  - first:
+      213: -1756934509588251764
+    second: $0mr_mollusk_8
+  - first:
+      213: -4742206043787281865
+    second: $0mr_mollusk_9
+  - first:
+      213: 326220461723655127
+    second: $0mr_mollusk_10
+  - first:
+      213: 6928082398966916451
+    second: $0mr_mollusk_11
+  - first:
+      213: -7450795053064329642
+    second: $0mr_mollusk_12
+  - first:
+      213: 2487455896426569961
+    second: $0mr_mollusk_13
+  - first:
+      213: -6639269792551352400
+    second: $0mr_mollusk_14
+  - first:
+      213: -847005333533863916
+    second: $0mr_mollusk_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: $0mr_mollusk_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 225
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c683f6c00d73d95d0800000000000000
+      internalID: -3054223605585987476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 192
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d9425a89fe71510800000000000000
+      internalID: 1519946838145539377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 225
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95a1d7823db038e0800000000000000
+      internalID: -1715663433303480932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 224
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774c16fc4767e14d0800000000000000
+      internalID: -3161959644299934601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_4
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 192
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed2e21910514b9830800000000000000
+      internalID: 4078925699787973342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_5
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 224
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c8dbd9cc8519d90800000000000000
+      internalID: -7092790302288802681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 192
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd7f8816e9fde530800000000000000
+      internalID: 3886036820140457438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 128
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b610f87281b346150800000000000000
+      internalID: 5864877589672165739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 128
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bfd564f5d1e97e0800000000000000
+      internalID: -1756934509588251764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 128
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a395c7abc403eb0800000000000000
+      internalID: -4742206043787281865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 64
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db908318c7f68400800000000000000
+      internalID: 326220461723655127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 64
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3652f0d3c3e752060800000000000000
+      internalID: 6928082398966916451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 64
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656ecdf0065799890800000000000000
+      internalID: -7450795053064329642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_13
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0e4fc65f7358220800000000000000
+      internalID: 2487455896426569961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7cefecc439cd3a0800000000000000
+      internalID: -6639269792551352400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_mollusk_15
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4105ad30325de34f0800000000000000
+      internalID: -847005333533863916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      $0mr_mollusk_0: -3054223605585987476
+      $0mr_mollusk_1: 1519946838145539377
+      $0mr_mollusk_10: 326220461723655127
+      $0mr_mollusk_11: 6928082398966916451
+      $0mr_mollusk_12: -7450795053064329642
+      $0mr_mollusk_13: 2487455896426569961
+      $0mr_mollusk_14: -6639269792551352400
+      $0mr_mollusk_15: -847005333533863916
+      $0mr_mollusk_2: -1715663433303480932
+      $0mr_mollusk_3: -3161959644299934601
+      $0mr_mollusk_4: 4078925699787973342
+      $0mr_mollusk_5: -7092790302288802681
+      $0mr_mollusk_6: 3886036820140457438
+      $0mr_mollusk_7: 5864877589672165739
+      $0mr_mollusk_8: -1756934509588251764
+      $0mr_mollusk_9: -4742206043787281865
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
