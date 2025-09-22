@@ -89,7 +89,7 @@ public class PlayerController2D : MonoBehaviour
             rb.linearVelocityY = maxFallSpeed;
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         if (!groundCheck) return;
         Gizmos.color = Color.cyan;
