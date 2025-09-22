@@ -20,11 +20,15 @@ public class PlayerController2D : MonoBehaviour
     public float groundCheckRadius = 0.15f;
     public LayerMask groundLayer;
 
-    // 🔹 Facing / Visual (ADDED)
     [Header("Facing / Visual")]
-    [SerializeField] private SpriteRenderer spriteRenderer; // assign your player sprite here
-    [SerializeField] private bool spriteFacesRightByDefault = true; // uncheck if your art faces left
-    private int facing = 1; // 1 = right, -1 = left
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private bool spriteFacesRightByDefault = true;
+    private int facing = 1;
+
+    // 🔹 Animation
+    private Animator anim;
+    private bool isGrounded;
+    private bool isDead;
 
     Rigidbody2D rb;
     float inputX, coyoteCounter, bufferCounter;
@@ -37,31 +41,34 @@ public class PlayerController2D : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.gravityScale = baseGravityScale;
 
-        // auto-grab SpriteRenderer if not set
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        // grab Animator
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (isDead) return; // no control if dead
+
         var k = Keyboard.current;
 
-        // horizontal input (A/D or ←/→)
+        // horizontal input
         inputX = 0f;
         if (k.aKey.isPressed || k.leftArrowKey.isPressed) inputX -= 1f;
         if (k.dKey.isPressed || k.rightArrowKey.isPressed) inputX += 1f;
 
-        // 🔹 Face where we move (ADDED)
+        // Facing
         if (inputX > 0.01f) SetFacing(1);
         else if (inputX < -0.01f) SetFacing(-1);
-        // if inputX == 0 → keep last facing
 
-        bool grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        coyoteCounter = grounded ? coyoteTime : Mathf.Max(0f, coyoteCounter - Time.deltaTime);
+        // Ground check
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        coyoteCounter = isGrounded ? coyoteTime : Mathf.Max(0f, coyoteCounter - Time.deltaTime);
 
-        // Space only
+        // Jump input
         bool jumpPressed = k.spaceKey.wasPressedThisFrame;
         bool jumpReleased = k.spaceKey.wasReleasedThisFrame;
-
         bufferCounter = jumpPressed ? jumpBuffer : Mathf.Max(0f, bufferCounter - Time.deltaTime);
 
         if (bufferCounter > 0f && coyoteCounter > 0f)
@@ -75,10 +82,18 @@ public class PlayerController2D : MonoBehaviour
 
         if (jumpReleased && rb.linearVelocityY > 0f)
             rb.linearVelocityY *= 0.5f;
+
+        // 🔹 Animation updates
+        anim.SetBool("isRunning", Mathf.Abs(inputX) > 0.01f);
+        anim.SetBool("isJumping", !isGrounded);
+        anim.SetBool("isPushing", k.leftShiftKey.isPressed);
+        anim.SetBool("isGrabbing", k.eKey.isPressed);
     }
 
     void FixedUpdate()
     {
+        if (isDead) return;
+
         rb.linearVelocityX = inputX * moveSpeed;
 
         rb.gravityScale = (rb.linearVelocityY < 0f)
@@ -96,7 +111,6 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
-    // 🔹 Helper to flip visuals (ADDED)
     void SetFacing(int dir)
     {
         if (dir == facing) return;
@@ -109,10 +123,19 @@ public class PlayerController2D : MonoBehaviour
         }
         else
         {
-            // fallback: flip the whole transform if no SpriteRenderer assigned
             Vector3 s = transform.localScale;
             s.x = Mathf.Abs(s.x) * dir;
             transform.localScale = s;
         }
+    }
+
+    // 🔹 Death handling (call this from damage script)
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false; // disable physics
+        anim.SetTrigger("die");
     }
 }
