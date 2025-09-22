@@ -14,7 +14,6 @@ public class PlayerPushPull : MonoBehaviour
     public bool allowCollisionWhileGrabbed = true;
 
     [Header("Idle boxes")]
-    // 🔹 NEW: when true, boxes are Kinematic when not grabbed (so player won't push them)
     public bool boxesKinematicUntilGrabbed = true;
 
     FixedJoint2D joint;
@@ -23,17 +22,18 @@ public class PlayerPushPull : MonoBehaviour
     int playerLayer;
     int grabbableLayer;
 
-    // remember original settings so we can restore if needed
     RigidbodyType2D grabbedOriginalType;
     bool grabbedOriginalFreezeRot;
     float grabbedOriginalGravity;
+
+    // 🔹 New flag for PlayerController2D
+    public bool isPushing { get; private set; }
 
     void Awake()
     {
         playerLayer    = LayerMask.NameToLayer("Player");
         grabbableLayer = LayerMask.NameToLayer("Grabbable");
 
-        // By default, ignore Player<->Grabbable so walking into crates won't push them
         if (playerLayer >= 0 && grabbableLayer >= 0)
             Physics2D.IgnoreLayerCollision(playerLayer, grabbableLayer, true);
     }
@@ -69,16 +69,13 @@ public class PlayerPushPull : MonoBehaviour
         grabbedRb = hit.attachedRigidbody ? hit.attachedRigidbody : hit.GetComponentInParent<Rigidbody2D>();
         if (!grabbedRb) return;
 
-        // Allow Player↔Grabbable collisions WHILE grabbing (so pushing/pulling works)
         if (playerLayer >= 0 && grabbableLayer >= 0 && allowCollisionWhileGrabbed)
             Physics2D.IgnoreLayerCollision(playerLayer, grabbableLayer, false);
 
-        // 🔹 Store original settings
         grabbedOriginalType       = grabbedRb.bodyType;
         grabbedOriginalFreezeRot  = grabbedRb.freezeRotation;
         grabbedOriginalGravity    = grabbedRb.gravityScale;
 
-        // 🔹 While held, make sure it’s Dynamic so physics + joint work
         if (boxesKinematicUntilGrabbed && grabbedRb.bodyType != RigidbodyType2D.Dynamic)
             grabbedRb.bodyType = RigidbodyType2D.Dynamic;
 
@@ -91,23 +88,23 @@ public class PlayerPushPull : MonoBehaviour
         joint.enableCollision = allowCollisionWhileGrabbed;
         joint.breakForce = Mathf.Infinity;
         joint.breakTorque = Mathf.Infinity;
+
+        // 🔹 Start pushing
+        isPushing = true;
     }
 
     public void Release()
     {
         if (joint) Destroy(joint);
 
-        // Re-ignore collisions after dropping
         if (playerLayer >= 0 && grabbableLayer >= 0 && allowCollisionWhileGrabbed)
             Physics2D.IgnoreLayerCollision(playerLayer, grabbableLayer, true);
 
         if (grabbedRb)
         {
-            // Stop any drift
             grabbedRb.linearVelocity = Vector2.zero;
             grabbedRb.angularVelocity = 0f;
 
-            // 🔹 Return to Kinematic when not grabbed (or restore original if you prefer)
             grabbedRb.bodyType = boxesKinematicUntilGrabbed
                 ? RigidbodyType2D.Kinematic
                 : grabbedOriginalType;
@@ -118,11 +115,13 @@ public class PlayerPushPull : MonoBehaviour
 
         grabbedRb = null;
         joint = null;
+
+        // 🔹 Stop pushing
+        isPushing = false;
     }
 
     void OnDisable()
     {
-        // Safety: ensure state restored if object is disabled while holding something
         if (grabbedRb) Release();
     }
 
@@ -133,6 +132,7 @@ public class PlayerPushPull : MonoBehaviour
         Gizmos.DrawWireSphere(grabOrigin.position, grabRadius);
     }
 }
+
 
 
 

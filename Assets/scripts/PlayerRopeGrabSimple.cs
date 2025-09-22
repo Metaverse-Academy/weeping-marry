@@ -1,31 +1,33 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // NEW input system (Keyboard.current, Key)
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerRopeGrabToggle : MonoBehaviour
 {
     [Header("Keys (New Input System)")]
-    public Key grabToggleKey = Key.E;   // press once to grab, press again to detach
+    public Key grabToggleKey = Key.R;   // press once to grab, press again to detach
     public Key detachKey     = Key.Space;
 
     [Header("Detection")]
-    public float grabRadius = 1.2f;     // how close the player must be to a rope segment
-    public LayerMask ropeMask;          // layers for rope segments (with RB2D + Collider2D)
+    public float grabRadius = 1.2f;     
+    public LayerMask ropeMask;          
 
     [Header("Swing / Feel")]
-    public bool enableCollisionWithRope = false; // usually false to avoid jitter while hanging
-    public float jumpOffSpeed = 0f;              // optional push on release (0 = none)
-    public float pumpForce = 12f;                // A=left, D=right while hanging
+    public bool enableCollisionWithRope = false; 
+    public float jumpOffSpeed = 0f;              
+    public float pumpForce = 12f;                
 
     Rigidbody2D rb;
-    HingeJoint2D joint;        // created on the player when grabbing
-    Rigidbody2D ropeRB;        // rope segment we’re attached to
-    PlayerController2D move;   // your movement script (optional, auto-found)
+    HingeJoint2D joint;        
+    Rigidbody2D ropeRB;        
+    PlayerController2D move;   
+    Animator anim;
 
     void Awake()
     {
         rb   = GetComponent<Rigidbody2D>();
         move = GetComponent<PlayerController2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,14 +35,14 @@ public class PlayerRopeGrabToggle : MonoBehaviour
         var k = Keyboard.current;
         if (k == null) return;
 
-        // Toggle with E
+        // Toggle with R
         if (k[grabToggleKey].wasPressedThisFrame)
         {
             if (joint == null) TryGrabNearestRope();
             else Detach();
         }
 
-        // Optional separate detach key
+        // Detach with Space
         if (joint != null && k[detachKey].wasPressedThisFrame)
         {
             Detach();
@@ -55,20 +57,17 @@ public class PlayerRopeGrabToggle : MonoBehaviour
         float inputX = 0f;
         if (k != null)
         {
-            if (k.aKey.isPressed || k.leftArrowKey.isPressed)  inputX -= 1f; // swing left
-            if (k.dKey.isPressed || k.rightArrowKey.isPressed) inputX += 1f; // swing right
+            if (k.aKey.isPressed || k.leftArrowKey.isPressed)  inputX -= 1f;
+            if (k.dKey.isPressed || k.rightArrowKey.isPressed) inputX += 1f;
         }
         if (Mathf.Abs(inputX) < 0.01f) return;
 
-        // Tangent at the player's position around the rope pivot/segment
+        // swing force
         Vector2 pivot = ropeRB.worldCenterOfMass;
         Vector2 toPlayer = (Vector2)transform.position - pivot;
         if (toPlayer.sqrMagnitude < 0.0001f) return;
 
-        // Perpendicular (rotate by +90°) gives tangent direction
         Vector2 tangent = new Vector2(-toPlayer.y, toPlayer.x).normalized;
-
-        // A = negative (left), D = positive (right)
         rb.AddForce(tangent * (pumpForce * inputX), ForceMode2D.Force);
     }
 
@@ -83,7 +82,7 @@ public class PlayerRopeGrabToggle : MonoBehaviour
         foreach (var h in hits)
         {
             var segRB = h.attachedRigidbody;
-            if (!segRB || segRB == rb) continue; // must be a rope segment with RB2D
+            if (!segRB || segRB == rb) continue; 
 
             Vector2 closest = (Vector2)h.bounds.ClosestPoint(transform.position);
             Vector2 delta   = closest - (Vector2)transform.position;
@@ -104,14 +103,14 @@ public class PlayerRopeGrabToggle : MonoBehaviour
         Vector2 connectWorld = best.bounds.ClosestPoint(transform.position);
         joint.connectedAnchor = ropeRB.transform.InverseTransformPoint(connectWorld);
 
-        if (move) move.enabled = false; // let physics take over while hanging
+        if (move) move.isOnRope = true;
+        if (anim) anim.SetBool("isGrabbing", true);
     }
 
     void Detach()
     {
         if (!joint) return;
 
-        // Optional: small launch along rope tangent
         if (jumpOffSpeed > 0f && ropeRB)
         {
             Vector2 pivot = ropeRB.worldCenterOfMass;
@@ -127,7 +126,8 @@ public class PlayerRopeGrabToggle : MonoBehaviour
         joint  = null;
         ropeRB = null;
 
-        if (move) move.enabled = true;
+        if (move) move.isOnRope = false;
+        if (anim) anim.SetBool("isGrabbing", false);
     }
 
     void OnDrawGizmosSelected()

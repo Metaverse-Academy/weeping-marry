@@ -56,7 +56,7 @@ public class EnemyAi : MonoBehaviour
 
         rb.MovePosition(newPos);
 
-        if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f)
+        if (Vector2.Distance(transform.position, targetPoint.position) < 0.5f)
         {
             targetPoint = targetPoint == pP1 ? pP2 : pP1;
         }

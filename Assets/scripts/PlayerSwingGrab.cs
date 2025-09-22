@@ -5,7 +5,7 @@ using UnityEngine.InputSystem; // new input
 public class PlayerSwingGrab : MonoBehaviour
 {
     [Header("Grab Settings")]
-    public Key grabKey = Key.E;        // <-- Key (not KeyCode)
+    public Key grabKey = Key.R;        // <-- Key (not KeyCode)
     public Key detachKey = Key.Space;  // <-- Key (not KeyCode)
     public float grabRadius = 1.2f;
     public LayerMask swingLayer;
@@ -14,6 +14,7 @@ public class PlayerSwingGrab : MonoBehaviour
     public float pumpForce = 10f;
     public float jumpOffSpeed = 7f;
     public bool enablePlayerCollisionWithSwing = false;
+    
 
     Rigidbody2D rb;
     HingeJoint2D swingJoint;

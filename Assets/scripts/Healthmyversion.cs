@@ -58,6 +58,7 @@ public class Healthmyversion : MonoBehaviour, IDamageable
             Die();
         }
     }
+  
 
     public void Heal(int amount)
     {

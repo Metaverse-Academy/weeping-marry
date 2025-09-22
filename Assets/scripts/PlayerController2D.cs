@@ -20,14 +20,22 @@ public class PlayerController2D : MonoBehaviour
     public float groundCheckRadius = 0.15f;
     public LayerMask groundLayer;
 
-    // 🔹 Facing / Visual (ADDED)
     [Header("Facing / Visual")]
-    [SerializeField] private SpriteRenderer spriteRenderer; // assign your player sprite here
-    [SerializeField] private bool spriteFacesRightByDefault = true; // uncheck if your art faces left
-    private int facing = 1; // 1 = right, -1 = left
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private bool spriteFacesRightByDefault = true;
 
-    Rigidbody2D rb;
-    float inputX, coyoteCounter, bufferCounter;
+    private int facing = 1;
+
+    // 🔹 Rope state (set from PlayerRopeGrabToggle)
+    [HideInInspector] public bool isOnRope = false;
+
+    private Animator anim;
+    private bool isDead;
+    private Rigidbody2D rb;
+    private PlayerPushPull pushScript;
+
+    float inputX;
+    float coyoteCounter, bufferCounter;
 
     void Awake()
     {
@@ -36,50 +44,73 @@ public class PlayerController2D : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.gravityScale = baseGravityScale;
+        pushScript = GetComponent<PlayerPushPull>();
 
-        // auto-grab SpriteRenderer if not set
+        anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
     {
+        if (isDead) return;
         var k = Keyboard.current;
 
-        // horizontal input (A/D or ←/→)
+        // horizontal input
         inputX = 0f;
-        if (k.aKey.isPressed || k.leftArrowKey.isPressed)  inputX -= 1f;
+        if (k.aKey.isPressed || k.leftArrowKey.isPressed) inputX -= 1f;
         if (k.dKey.isPressed || k.rightArrowKey.isPressed) inputX += 1f;
 
-        // 🔹 Face where we move (ADDED)
-        if (inputX > 0.01f)      SetFacing(1);
+        // flip visuals
+        if (inputX > 0.01f) SetFacing(1);
         else if (inputX < -0.01f) SetFacing(-1);
-        // if inputX == 0 → keep last facing
 
+        // grounded check
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         coyoteCounter = grounded ? coyoteTime : Mathf.Max(0f, coyoteCounter - Time.deltaTime);
 
-        // Space only
-        bool jumpPressed  = k.spaceKey.wasPressedThisFrame;
+        // Jump input
+        bool jumpPressed = k.spaceKey.wasPressedThisFrame;
         bool jumpReleased = k.spaceKey.wasReleasedThisFrame;
 
-        bufferCounter = jumpPressed ? jumpBuffer : Mathf.Max(0f, bufferCounter - Time.deltaTime);
-
-        if (bufferCounter > 0f && coyoteCounter > 0f)
+        if (!isOnRope) // 🔹 block jump logic when on rope
         {
-            float g = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
-            float vJump = Mathf.Sqrt(2f * g * jumpHeight);
-            rb.linearVelocityY = vJump;
-            bufferCounter = 0f;
-            coyoteCounter = 0f;
+            bufferCounter = jumpPressed ? jumpBuffer : Mathf.Max(0f, bufferCounter - Time.deltaTime);
+
+            if (bufferCounter > 0f && coyoteCounter > 0f)
+            {
+                float g = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
+                float vJump = Mathf.Sqrt(2f * g * jumpHeight);
+                rb.linearVelocityY = vJump;
+                bufferCounter = 0f;
+                coyoteCounter = 0f;
+            }
+
+            if (jumpReleased && rb.linearVelocityY > 0f)
+                rb.linearVelocityY *= 0.5f;
         }
 
-        if (jumpReleased && rb.linearVelocityY > 0f)
-            rb.linearVelocityY *= 0.5f;
+        // --- Animator States ---
+        if (isOnRope)
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isGrabbing", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", Mathf.Abs(inputX) > 0.01f);
+            anim.SetBool("isJumping", !grounded);
+            anim.SetBool("isGrabbing", false);
+            anim.SetBool("isPushing", pushScript && pushScript.isPushing);
+        }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocityX = inputX * moveSpeed;
+        if (!isOnRope) // 🔹 disable ground movement when on rope
+        {
+            rb.linearVelocityX = inputX * moveSpeed;
+        }
 
         rb.gravityScale = (rb.linearVelocityY < 0f)
             ? baseGravityScale * fallGravityMultiplier
@@ -96,7 +127,6 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
-    // 🔹 Helper to flip visuals (ADDED)
     void SetFacing(int dir)
     {
         if (dir == facing) return;
@@ -109,10 +139,18 @@ public class PlayerController2D : MonoBehaviour
         }
         else
         {
-            // fallback: flip the whole transform if no SpriteRenderer assigned
             Vector3 s = transform.localScale;
             s.x = Mathf.Abs(s.x) * dir;
             transform.localScale = s;
         }
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false;
+        anim.SetTrigger("die");
     }
 }
