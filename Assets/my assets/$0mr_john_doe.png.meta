@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 218114867c2a882428506a69b60c55b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8324481015300457474
+    second: $0mr_john_doe_0
+  - first:
+      213: 344383012178056251
+    second: $0mr_john_doe_1
+  - first:
+      213: -7225059061048167881
+    second: $0mr_john_doe_2
+  - first:
+      213: 7913024043441648947
+    second: $0mr_john_doe_3
+  - first:
+      213: -5362924613861622520
+    second: $0mr_john_doe_4
+  - first:
+      213: -6973875863354101222
+    second: $0mr_john_doe_5
+  - first:
+      213: -2462418899544270024
+    second: $0mr_john_doe_6
+  - first:
+      213: 1691740675795574650
+    second: $0mr_john_doe_7
+  - first:
+      213: -7270151739369885829
+    second: $0mr_john_doe_8
+  - first:
+      213: 4309369654439311245
+    second: $0mr_john_doe_9
+  - first:
+      213: -7146726315023353703
+    second: $0mr_john_doe_10
+  - first:
+      213: 5819858082809308306
+    second: $0mr_john_doe_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: $0mr_john_doe_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 204
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2048770e06f768370800000000000000
+      internalID: 8324481015300457474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 204
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b345d83668e77c400800000000000000
+      internalID: 344383012178056251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 203
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 732b101601f6bbb90800000000000000
+      internalID: -7225059061048167881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 139
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335f6784175b0dd60800000000000000
+      internalID: 7913024043441648947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 138
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d34994a701395b0800000000000000
+      internalID: -5362924613861622520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_5
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 137
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12bb19f9d0d73f90800000000000000
+      internalID: -6973875863354101222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 73
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b947cae0bb3ddd0800000000000000
+      internalID: -2462418899544270024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_7
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 74
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7fdfd07e254a7710800000000000000
+      internalID: 1691740675795574650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_8
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 75
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f6baf038b3b1b90800000000000000
+      internalID: -7270151739369885829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 15
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d87f3b26ed4fdcb30800000000000000
+      internalID: 4309369654439311245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 14
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998b81e084ab1dc90800000000000000
+      internalID: -7146726315023353703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $0mr_john_doe_11
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 13
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294e805671a44c050800000000000000
+      internalID: 5819858082809308306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      $0mr_john_doe_0: 8324481015300457474
+      $0mr_john_doe_1: 344383012178056251
+      $0mr_john_doe_10: -7146726315023353703
+      $0mr_john_doe_11: 5819858082809308306
+      $0mr_john_doe_2: -7225059061048167881
+      $0mr_john_doe_3: 7913024043441648947
+      $0mr_john_doe_4: -5362924613861622520
+      $0mr_john_doe_5: -6973875863354101222
+      $0mr_john_doe_6: -2462418899544270024
+      $0mr_john_doe_7: 1691740675795574650
+      $0mr_john_doe_8: -7270151739369885829
+      $0mr_john_doe_9: 4309369654439311245
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
