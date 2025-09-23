@@ -105049,9 +105049,8 @@ MonoBehaviour:
   playerTag: Player
   stompBounceForce: 12
   topOffset: 0.15
-  animator: {fileID: 205371741}
-  deathTrigger: Die
-  deathAnimDuration: 0.6
+  squishTime: 0.12
+  squishScale: {x: 1.2, y: 0.25}
   disableColliderOnDeath: 1
 --- !u!114 &205371744
 MonoBehaviour:
@@ -107471,9 +107470,8 @@ MonoBehaviour:
   playerTag: Player
   stompBounceForce: 12
   topOffset: 0.15
-  animator: {fileID: 1163086112}
-  deathTrigger: Die
-  deathAnimDuration: 0.6
+  squishTime: 0.12
+  squishScale: {x: 1.2, y: 0.25}
   disableColliderOnDeath: 1
 --- !u!114 &1163086115
 MonoBehaviour:
@@ -132131,9 +132129,8 @@ MonoBehaviour:
   playerTag: Player
   stompBounceForce: 12
   topOffset: 0.15
-  animator: {fileID: 1225509563}
-  deathTrigger: Die
-  deathAnimDuration: 0.6
+  squishTime: 0.12
+  squishScale: {x: 1.2, y: 0.25}
   disableColliderOnDeath: 1
 --- !u!114 &1225509566
 MonoBehaviour:
@@ -133145,9 +133142,8 @@ MonoBehaviour:
   playerTag: Player
   stompBounceForce: 12
   topOffset: 0.15
-  animator: {fileID: 1830427029}
-  deathTrigger: Die
-  deathAnimDuration: 0.6
+  squishTime: 0.12
+  squishScale: {x: 1.2, y: 0.25}
   disableColliderOnDeath: 1
 --- !u!114 &1830427032
 MonoBehaviour:
@@ -133585,9 +133581,8 @@ MonoBehaviour:
   playerTag: Player
   stompBounceForce: 12
   topOffset: 0.15
-  animator: {fileID: 1900478676}
-  deathTrigger: Die
-  deathAnimDuration: 0.6
+  squishTime: 0.12
+  squishScale: {x: 1.2, y: 0.25}
   disableColliderOnDeath: 1
 --- !u!114 &1900478679
 MonoBehaviour:
