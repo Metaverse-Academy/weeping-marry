@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8257388958057801812}
   - component: {fileID: 6842807723408969772}
   - component: {fileID: 1666599177452453799}
+  - component: {fileID: -313494695331978742}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -90,6 +91,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &-313494695331978742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4589751034741150383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4508c6cbde9c4fa42b74a7461e4eac05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialogueText: {fileID: 5918369910573480870}
+  lines:
+  - hello
+  textSpeed: 0.03
 --- !u!1 &6472865498405835206
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,8 +342,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
