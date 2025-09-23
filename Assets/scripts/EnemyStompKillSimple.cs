@@ -6,13 +6,15 @@ public class EnemyStompKillSimple : MonoBehaviour
 {
     [Header("Stomp")]
     public string playerTag = "Player";
-    public float stompBounceForce = 12f;   // how high the player bounces
+    public float stompBounceForce = 12f;   
     [Tooltip("How far above the enemy's center counts as 'top' (helps reject side hits).")]
     public float topOffset = 0.15f;
 
-    [Header("Squish Death")]
-    public float squishTime = 0.12f;       // time to squash
-    public Vector2 squishScale = new Vector2(1.2f, 0.25f); // x wider, y flatter
+    [Header("Death Animation")]
+    public Animator animator;            // assign in Inspector
+    public string deathTrigger = "Die";  // name of the trigger parameter in Animator
+    public float deathAnimDuration = 0.6f; // fallback wait time if no Animation Event
+
     public bool disableColliderOnDeath = true;
 
     Rigidbody2D rbEnemy;
@@ -21,10 +23,12 @@ public class EnemyStompKillSimple : MonoBehaviour
 
     void Awake()
     {
-        rbEnemy = GetComponent<Rigidbody2D>(); // optional
+        rbEnemy = GetComponent<Rigidbody2D>(); 
         colEnemy = GetComponent<Collider2D>();
         if (rbEnemy) rbEnemy.freezeRotation = true;
-        if (colEnemy) colEnemy.isTrigger = false; // should be a solid collider
+        if (colEnemy) colEnemy.isTrigger = false; 
+
+        if (!animator) animator = GetComponentInChildren<Animator>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -32,18 +36,12 @@ public class EnemyStompKillSimple : MonoBehaviour
         if (dead) return;
         if (!collision.collider.CompareTag(playerTag)) return;
 
-        var playerRb = collision.rigidbody; // player's Rigidbody2D
+        var playerRb = collision.rigidbody; 
         if (playerRb == null) return;
 
-        // --- Is this a stomp? ---
-        // 1) player moving downward (<= 0)
         bool playerFalling = playerRb.linearVelocityY <= 0f;
+        bool playerAbove = collision.transform.position.y > transform.position.y + topOffset;
 
-        // 2) player is above enemy by some margin
-        bool playerAbove = collision.transform.position.y >
-                           transform.position.y + topOffset;
-
-        // 3) contact normal pointing mostly down (means hit from above)
         bool topContact = false;
         for (int i = 0; i < collision.contactCount; i++)
         {
@@ -63,19 +61,16 @@ public class EnemyStompKillSimple : MonoBehaviour
             v.y = stompBounceForce;
             playerRb.linearVelocity = v;
 
-            // Kill enemy with squish
-            StartCoroutine(SquishAndDie());
-            // IMPORTANT: do nothing else (don’t damage player here)
+            // Play death sequence
+            StartCoroutine(DieWithAnimation());
         }
-        // else: do nothing — your enemy’s other script (EnemyDamageDealer2D)
-        // can still hurt the player on side/bottom contact.
     }
 
-    IEnumerator SquishAndDie()
+    IEnumerator DieWithAnimation()
     {
         dead = true;
 
-        // Stop interacting while squishing
+        // Disable movement + collision
         if (rbEnemy)
         {
             rbEnemy.linearVelocity = Vector2.zero;
@@ -83,22 +78,25 @@ public class EnemyStompKillSimple : MonoBehaviour
         }
         if (disableColliderOnDeath && colEnemy) colEnemy.enabled = false;
 
-        // Squish animation
-        Vector3 start = transform.localScale;
-        Vector3 end = new Vector3(start.x * squishScale.x, start.y * squishScale.y, start.z);
-
-        float t = 0f;
-        while (t < squishTime)
+        if (animator)
         {
-            t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(start, end, t / squishTime);
+            animator.SetTrigger(deathTrigger);
+            // Wait for animation length (or use Animation Event instead of this)
+            yield return new WaitForSeconds(deathAnimDuration);
+        }
+        else
+        {
+            // fallback: destroy immediately if no animator
             yield return null;
         }
 
-        // tiny delay to let the squish be seen
-        yield return new WaitForSeconds(0.06f);
+        Destroy(gameObject);
+    }
 
+    // Optional: if you add an Animation Event at the end of the "Die" clip,
+    // call this method instead of waiting a fixed time.
+    public void OnDeathAnimFinished()
+    {
         Destroy(gameObject);
     }
 }
-
