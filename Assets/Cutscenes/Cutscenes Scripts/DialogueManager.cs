@@ -5,26 +5,33 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     [Header("UI References")]
-    public TextMeshProUGUI dialogueText;   // Main dialogue text
-    public TextMeshProUGUI speakerText;    // Character name
-    public GameObject spaceIcon;           // [ Space ] hint UI
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
+    public GameObject spacePrompt;
 
     [Header("Dialogue Settings")]
-    [TextArea(2, 6)]
-    public string[] lines;                 // Dialogue lines
-    public string[] speakers;              // Speaker names (same length as lines)
-    public float textSpeed = 0.03f;        // Typing speed
+    [TextArea(2, 5)] public string[] lines;   // Fill in Inspector
+    public string[] speakers;                 // Fill in Inspector
+    public float textSpeed = 0.03f;
+    public string nextSceneName = "darkScene"; // Set in Inspector
 
+    [Header("Audio Settings")]
+    public AudioClip girlBlip;
+    public AudioClip spiritBlip;
+
+    private AudioSource audioSource;
     private int index;
     private bool isTyping;
-    private Coroutine blinkCoroutine;
 
     void Start()
     {
         dialogueText.text = "";
-        speakerText.text = "";
-        spaceIcon.SetActive(false);
-        gameObject.SetActive(false);
+        nameText.text = "";
+        if (spacePrompt != null) spacePrompt.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
+
+        gameObject.SetActive(false); // hidden until Timeline triggers it
     }
 
     void Update()
@@ -33,13 +40,11 @@ public class DialogueManager : MonoBehaviour
         {
             if (isTyping)
             {
-                // Skip typing effect and finish line instantly
+                // finish instantly
                 StopAllCoroutines();
                 dialogueText.text = lines[index];
                 isTyping = false;
-
-                // Show [Space] icon immediately
-                blinkCoroutine = StartCoroutine(BlinkIcon());
+                if (spacePrompt != null) spacePrompt.SetActive(true);
             }
             else
             {
@@ -51,6 +56,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         if (lines == null || lines.Length == 0) return;
+
         index = 0;
         gameObject.SetActive(true);
         StartCoroutine(TypeLine());
@@ -60,46 +66,35 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-        spaceIcon.SetActive(false);
+        if (spacePrompt != null) spacePrompt.SetActive(false);
 
-        // Set speaker name if available
-        if (speakers != null && index < speakers.Length)
-        {
-            speakerText.text = speakers[index];
-        }
+        if (speakers != null && speakers.Length > index)
+            nameText.text = speakers[index];
         else
-        {
-            speakerText.text = "";
-        }
+            nameText.text = "";
 
         foreach (char c in lines[index].ToCharArray())
         {
             dialogueText.text += c;
+
+            // 🔊 Play audio depending on speaker
+            if (audioSource != null)
+            {
+                if (speakers[index] == "Girl" && girlBlip != null)
+                    audioSource.PlayOneShot(girlBlip);
+                else if (speakers[index] == "Spirit" && spiritBlip != null)
+                    audioSource.PlayOneShot(spiritBlip);
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
 
         isTyping = false;
-        blinkCoroutine = StartCoroutine(BlinkIcon());
-    }
-
-    IEnumerator BlinkIcon()
-    {
-        spaceIcon.SetActive(true);
-        while (true)
-        {
-            spaceIcon.SetActive(!spaceIcon.activeSelf);
-            yield return new WaitForSeconds(0.5f);
-        }
+        if (spacePrompt != null) spacePrompt.SetActive(true);
     }
 
     void NextLine()
     {
-        if (blinkCoroutine != null)
-        {
-            StopCoroutine(blinkCoroutine);
-            spaceIcon.SetActive(false);
-        }
-
         if (index < lines.Length - 1)
         {
             index++;
@@ -113,16 +108,24 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        if (blinkCoroutine != null)
+        dialogueText.text = "";
+        nameText.text = "";
+        if (spacePrompt != null) spacePrompt.SetActive(false);
+
+        StartCoroutine(WaitAndFadeOut());
+    }
+
+    IEnumerator WaitAndFadeOut()
+    {
+        yield return new WaitForSeconds(3f);
+
+        StorySceneFader fader = FindFirstObjectByType<StorySceneFader>();
+        if (fader != null)
         {
-            StopCoroutine(blinkCoroutine);
+            fader.FadeOutAndLoad(nextSceneName);
         }
 
-        spaceIcon.SetActive(false);
-        dialogueText.text = "";
-        speakerText.text = "";
+        // now safe to hide dialogue box
         gameObject.SetActive(false);
-
-        // Optionally: notify Timeline/SceneLoader here
     }
 }
