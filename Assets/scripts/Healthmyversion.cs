@@ -15,6 +15,13 @@ public class Healthmyversion : MonoBehaviour, IDamageable
     public float knockbackX = 6f;   // horizontal shove
     public float knockbackY = 4f;   // small hop
 
+    [Header("Audio")]
+    public AudioSource audioSource;   // assign an AudioSource (or leave empty to auto-create)
+    public AudioClip damageClip;      // play when taking damage
+    public AudioClip deathClip; 
+
+    [Tooltip("Assign the crying and background music AudioSources here; they'll be stopped on death.")]
+    public AudioSource[] stopWhenDying;
     Rigidbody2D rb;
 
     void Awake()
@@ -22,12 +29,17 @@ public class Healthmyversion : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         CurrentHealth = maxHealth;
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        if (!audioSource)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            audioSource.loop = false;
+            audioSource.spatialBlend = 0f; // 2D
+        }
     }
 
     // Existing API stays the same
     public void TakeDamage(int amount) => TakeDamageInternal(amount, null);
-
-    // New: use when you know where the hit came from
     public void TakeDamageFrom(int amount, Vector2 attackerWorldPos) =>
         TakeDamageInternal(amount, attackerWorldPos);
 
@@ -38,6 +50,13 @@ public class Healthmyversion : MonoBehaviour, IDamageable
 
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+
+        // damage SFX
+        if (CurrentHealth > 0)
+        {
+            if (damageClip && audioSource) audioSource.PlayOneShot(damageClip);
+        }
+
 
         // ---- Knockback ----
         if (rb)
@@ -55,6 +74,18 @@ public class Healthmyversion : MonoBehaviour, IDamageable
         if (CurrentHealth == 0)
         {
             Debug.Log($"{gameObject.name} health is zero");
+            
+            if (stopWhenDying != null)
+            {
+                for (int i = 0; i < stopWhenDying.Length; i++)
+                {
+                    if (stopWhenDying[i]) stopWhenDying[i].Stop();
+                }
+            }
+
+            // 🔊 play death clip
+            if (deathClip && audioSource)
+                audioSource.PlayOneShot(deathClip);
             Die();
         }
     }

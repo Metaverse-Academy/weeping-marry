@@ -6,6 +6,9 @@ public class EnemyStompKillSimple : MonoBehaviour
 {
     [Header("Stomp")]
     public string playerTag = "Player";
+     [Header("Audio")]
+    public AudioSource audioSource;   // assign or auto-create
+    public AudioClip stompClip;  
     public float stompBounceForce = 12f;   
     [Tooltip("How far above the enemy's center counts as 'top' (helps reject side hits).")]
     public float topOffset = 0.15f;
@@ -60,6 +63,10 @@ public class EnemyStompKillSimple : MonoBehaviour
             Vector2 v = playerRb.linearVelocity;
             v.y = stompBounceForce;
             playerRb.linearVelocity = v;
+            
+            // Play sound 
+            if (stompClip && audioSource)
+            audioSource.PlayOneShot(stompClip);
 
             // Play death sequence
             StartCoroutine(DieWithAnimation());
