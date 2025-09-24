@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cutscenes/Cutscenes Scenes/StartScene.unity
     guid: 9cf85bac97d3a144fa55f082cd81cbc8
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5e8bc603713d96a438905e5e6d063260
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

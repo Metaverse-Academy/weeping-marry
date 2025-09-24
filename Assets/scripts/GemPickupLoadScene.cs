@@ -7,9 +7,19 @@ public class GemPickupLoadScene : MonoBehaviour
     [Header("Who can pick up")]
     public string playerTag = "Player";
 
+    public enum LoadMode { NextInBuild, ByBuildIndex, BySceneName }
+
     [Header("Where to go")]
-    public bool loadNextInBuild = true;       // if true → next scene by build index
-    public string sceneNameIfNotNext = "";    // otherwise load this exact scene name
+    public LoadMode loadMode = LoadMode.NextInBuild;
+
+    [Tooltip("Used when Load Mode = ByBuildIndex. Set to a valid Build Settings index.")]
+    public int targetBuildIndex = 1; // pick in Inspector
+
+    [Tooltip("Used when Load Mode = BySceneName. Must match Build Settings scene name.")]
+    public string targetSceneName = "";
+
+    [Header("Optional")]
+    public bool destroyOnPickup = false; // destroy this object after trigger
 
     bool loading; // prevents double-trigger
 
@@ -27,21 +37,40 @@ public class GemPickupLoadScene : MonoBehaviour
 
         loading = true;
 
-        // (Optional) remove the gem visuals
-        // Destroy(gameObject); // uncomment if the whole object is just the gem
+        // optional visuals cleanup
+        if (destroyOnPickup) Destroy(gameObject);
 
-        if (loadNextInBuild)
+        switch (loadMode)
         {
-            int i = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(i + 1);
-        }
-        else
-        {
-            if (!string.IsNullOrEmpty(sceneNameIfNotNext))
-                SceneManager.LoadScene(sceneNameIfNotNext);
-            else
-                Debug.LogWarning("GemPickupLoadScene: No scene name set and loadNextInBuild is false.");
+            case LoadMode.NextInBuild:
+            {
+                int i = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(i + 1);
+                break;
+            }
+            case LoadMode.ByBuildIndex:
+            {
+                if (targetBuildIndex < 0 || targetBuildIndex >= SceneManager.sceneCountInBuildSettings)
+                {
+                    Debug.LogWarning($"GemPickupLoadScene: targetBuildIndex {targetBuildIndex} is out of range. " +
+                                     "Check File → Build Settings.");
+                    loading = false; // allow retry if you fix at runtime
+                    return;
+                }
+                SceneManager.LoadScene(targetBuildIndex);
+                break;
+            }
+            case LoadMode.BySceneName:
+            {
+                if (string.IsNullOrEmpty(targetSceneName))
+                {
+                    Debug.LogWarning("GemPickupLoadScene: targetSceneName is empty. Set a scene name.");
+                    loading = false;
+                    return;
+                }
+                SceneManager.LoadScene(targetSceneName);
+                break;
+            }
         }
     }
 }
-
