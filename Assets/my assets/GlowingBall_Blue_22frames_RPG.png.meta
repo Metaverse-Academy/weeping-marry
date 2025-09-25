@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 161cf8af708c5654ab4dab105526f95b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3221480387207616789
+    second: GlowingBall_Blue_22frames_RPG_0
+  - first:
+      213: -6331125497879418911
+    second: GlowingBall_Blue_22frames_RPG_1
+  - first:
+      213: 5406402574232619471
+    second: GlowingBall_Blue_22frames_RPG_2
+  - first:
+      213: -5177480841760909558
+    second: GlowingBall_Blue_22frames_RPG_3
+  - first:
+      213: 45727630345786477
+    second: GlowingBall_Blue_22frames_RPG_4
+  - first:
+      213: 3146098590449556163
+    second: GlowingBall_Blue_22frames_RPG_5
+  - first:
+      213: -4234723694174899891
+    second: GlowingBall_Blue_22frames_RPG_6
+  - first:
+      213: -9015174929250798612
+    second: GlowingBall_Blue_22frames_RPG_7
+  - first:
+      213: 6656710896214793428
+    second: GlowingBall_Blue_22frames_RPG_8
+  - first:
+      213: 3944904927821458599
+    second: GlowingBall_Blue_22frames_RPG_9
+  - first:
+      213: -604381301227662225
+    second: GlowingBall_Blue_22frames_RPG_10
+  - first:
+      213: -4047930528455779789
+    second: GlowingBall_Blue_22frames_RPG_11
+  - first:
+      213: 7669717592071312141
+    second: GlowingBall_Blue_22frames_RPG_12
+  - first:
+      213: -7755027669646978144
+    second: GlowingBall_Blue_22frames_RPG_13
+  - first:
+      213: -1724441347126009821
+    second: GlowingBall_Blue_22frames_RPG_14
+  - first:
+      213: -3950347523052563851
+    second: GlowingBall_Blue_22frames_RPG_15
+  - first:
+      213: -2307547562459492087
+    second: GlowingBall_Blue_22frames_RPG_16
+  - first:
+      213: -6576092989160183245
+    second: GlowingBall_Blue_22frames_RPG_17
+  - first:
+      213: 8425146353546752412
+    second: GlowingBall_Blue_22frames_RPG_18
+  - first:
+      213: 444837542475347333
+    second: GlowingBall_Blue_22frames_RPG_19
+  - first:
+      213: -7442218144355850681
+    second: GlowingBall_Blue_22frames_RPG_20
+  - first:
+      213: 3213626607714557172
+    second: GlowingBall_Blue_22frames_RPG_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 802
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519d562185ff4bc20800000000000000
+      internalID: 3221480387207616789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_1
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 802
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7aa7647e25328a0800000000000000
+      internalID: -6331125497879418911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_2
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 802
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc984e53f76670b40800000000000000
+      internalID: 5406402574232619471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_3
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 798
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07537b1b94e528b0800000000000000
+      internalID: -5177480841760909558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_4
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 802
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d645e2b990572a000800000000000000
+      internalID: 45727630345786477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 610
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca5a10dfff29ab20800000000000000
+      internalID: 3146098590449556163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 614
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4176c69c3d3b35c0800000000000000
+      internalID: -4234723694174899891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_7
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 618
+        width: 110
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3bff19a2aa3e280800000000000000
+      internalID: -9015174929250798612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_8
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 614
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dcda559a43616c50800000000000000
+      internalID: 6656710896214793428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_9
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 614
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac6c7f712e1fb630800000000000000
+      internalID: 3944904927821458599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 422
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64df6f986ecc97f0800000000000000
+      internalID: -604381301227662225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_11
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 422
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a1fe791acd2d7c0800000000000000
+      internalID: -4047930528455779789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_12
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 422
+        width: 114
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0399fa938f407a60800000000000000
+      internalID: 7669717592071312141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_13
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 418
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3dd5f1c6b906490800000000000000
+      internalID: -7755027669646978144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_14
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 418
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320ee843bbd8118e0800000000000000
+      internalID: -1724441347126009821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_15
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 226
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5729b1d8bdb8d29c0800000000000000
+      internalID: -3950347523052563851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_16
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 222
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9019845c7b1f9ffd0800000000000000
+      internalID: -2307547562459492087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_17
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 226
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33aab2b94460db4a0800000000000000
+      internalID: -6576092989160183245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_18
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 230
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91f4df58f12ce470800000000000000
+      internalID: 8425146353546752412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_19
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 226
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585300653616c2600800000000000000
+      internalID: 444837542475347333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_20
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 34
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746e3bc370ee7b890800000000000000
+      internalID: -7442218144355850681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlowingBall_Blue_22frames_RPG_21
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 34
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fcd1998f58199c20800000000000000
+      internalID: 3213626607714557172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GlowingBall_Blue_22frames_RPG_0: 3221480387207616789
+      GlowingBall_Blue_22frames_RPG_1: -6331125497879418911
+      GlowingBall_Blue_22frames_RPG_10: -604381301227662225
+      GlowingBall_Blue_22frames_RPG_11: -4047930528455779789
+      GlowingBall_Blue_22frames_RPG_12: 7669717592071312141
+      GlowingBall_Blue_22frames_RPG_13: -7755027669646978144
+      GlowingBall_Blue_22frames_RPG_14: -1724441347126009821
+      GlowingBall_Blue_22frames_RPG_15: -3950347523052563851
+      GlowingBall_Blue_22frames_RPG_16: -2307547562459492087
+      GlowingBall_Blue_22frames_RPG_17: -6576092989160183245
+      GlowingBall_Blue_22frames_RPG_18: 8425146353546752412
+      GlowingBall_Blue_22frames_RPG_19: 444837542475347333
+      GlowingBall_Blue_22frames_RPG_2: 5406402574232619471
+      GlowingBall_Blue_22frames_RPG_20: -7442218144355850681
+      GlowingBall_Blue_22frames_RPG_21: 3213626607714557172
+      GlowingBall_Blue_22frames_RPG_3: -5177480841760909558
+      GlowingBall_Blue_22frames_RPG_4: 45727630345786477
+      GlowingBall_Blue_22frames_RPG_5: 3146098590449556163
+      GlowingBall_Blue_22frames_RPG_6: -4234723694174899891
+      GlowingBall_Blue_22frames_RPG_7: -9015174929250798612
+      GlowingBall_Blue_22frames_RPG_8: 6656710896214793428
+      GlowingBall_Blue_22frames_RPG_9: 3944904927821458599
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

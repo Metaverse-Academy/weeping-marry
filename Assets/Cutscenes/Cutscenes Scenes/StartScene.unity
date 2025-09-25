@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95305d575a7159144a4ce37135dec582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  sceneToLoad: darkScene
+  sceneToLoad: LightScene
 --- !u!224 &94825579 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7259895182823624506, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
@@ -897,7 +897,7 @@ PrefabInstance:
       objectReference: {fileID: 286606954}
     - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
       propertyPath: nextSceneName
-      value: darkScene
+      value: LightScene
       objectReference: {fileID: 0}
     - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
       propertyPath: lines.Array.size
