@@ -420,11 +420,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 529926144255155423, guid: 30c3fc1b11c03c943a2880534aca7a95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.92
+      value: 15.09
       objectReference: {fileID: 0}
     - target: {fileID: 529926144255155423, guid: 30c3fc1b11c03c943a2880534aca7a95, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.87
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 529926144255155423, guid: 30c3fc1b11c03c943a2880534aca7a95, type: 3}
       propertyPath: m_LocalPosition.z
@@ -880,10 +880,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1890020386}
     m_Modifications:
     - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
-      propertyPath: girlBlip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2c5a944f4ed1c224e9db3f42dfa8826a, type: 3}
-    - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
       propertyPath: nameText
       value: 
       objectReference: {fileID: 286606954}
@@ -894,7 +890,7 @@ PrefabInstance:
     - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
       propertyPath: spiritBlip
       value: 
-      objectReference: {fileID: 8300000, guid: 1b7471ae2a326ba41b2b714890dcd83f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: -313494695331978742, guid: a424adfbd92730541a0e28f8caa3a7bd, type: 3}
       propertyPath: speakerText
       value: 
@@ -1783,7 +1779,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3bec2256a28e5a449a530958a0b08e75, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.165
+  m_Volume: 0.255
   m_Pitch: 1
   Loop: 1
   Mute: 0
