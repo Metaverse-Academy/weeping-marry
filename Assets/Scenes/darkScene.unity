@@ -142135,7 +142135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GemPickupLoadScene
   playerTag: Player
   loadMode: 1
-  targetBuildIndex: 3
+  targetBuildIndex: 0
   targetSceneName: 
   destroyOnPickup: 0
 --- !u!61 &1238096065
@@ -146363,8 +146363,8 @@ MonoBehaviour:
   restartButton: {fileID: 555553931}
   quitButton: {fileID: 10335037}
   playerHealth: {fileID: 1765998802}
-  gameSceneIndex: 0
-  mainMenuSceneIndex: 3
+  gameSceneIndex: 3
+  mainMenuSceneIndex: 0
 --- !u!4 &1981553172
 Transform:
   m_ObjectHideFlags: 0
